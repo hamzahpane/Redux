@@ -1,0 +1,32 @@
+import * as counter from './constan';
+export const increment = ( value)  => {
+
+    return {
+        type:counter.INC,
+        value: value
+    }
+}
+
+
+export const decrement = (value) => {
+
+    return {
+        type:counter.DEC,
+        value: value
+    }
+}
+
+    export const  decrementCheck =(value) => {
+
+    return(dispatch , getState) => {
+
+        if(getState().counter.count > 0)
+        {
+                dispatch(decrement(value));
+
+        }
+
+    }
+
+}
+
